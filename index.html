@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Howler Example</title>
-  </head>
-  <body>
-    <h1>Howler Example/h1>
-  </body>
+    <title>Howler.js Sound Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+    <style>
+        #playButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="playButton">Play Sound</button>
+
+    <script>
+        const sound = new Howl({
+            src: ['Mediterranean Night.mp3'],
+            volume: 1.0
+        });
+
+        document.getElementById("playButton").addEventListener("click", function() {
+            sound.play();
+        });
+    </script>
+
+</body>
 </html>
